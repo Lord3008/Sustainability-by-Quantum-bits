@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Restaurants in Rourkela</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+      #map {
+        height: 500px;
+        width: 100%;
+      }
+      .restaurant-popup {
+        width: 250px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      .restaurant-name {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .restaurant-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .restaurant-excess,
+      .restaurant-discount,
+      .restaurant-expiry {
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Restaurants in Rourkela</h1>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+     
+      const map = L.map('map').setView([22.270811, 84.844503], 12);
+
+     
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      
+      const restaurants = [];
+
+      
+      function onMapClick(e) {
+        const name = prompt('Enter the restaurant name:');
+        const excess = prompt('Enter the excess:');
+        const discount = prompt('Enter the discount:');
+        const expiry = prompt('Enter the expiry (YYYY-MM-DD):');
+
+        const restaurant = {
+          name,
+          position: [e.latlng.lat, e.latlng.lng],
+          historicalData: [
+            { excess, discount, expiry },
+          ],
+        };
+
+        restaurants.push(restaurant);
+
+        const marker = L.marker(restaurant.position)
+          .addTo(map)
+          .bindPopup(createPopupContent(restaurant))
+          .openPopup();
+      }
+
+      
+      map.on('click', onMapClick);
+
+      function createPopupContent(restaurant) {
+        const latestData = restaurant.historicalData[restaurant.historicalData.length - 1];
+        return `
+          <div class="restaurant-popup">
+            <div>
+              <p class="restaurant-name">${restaurant.name}</p>
+              <p><strong>Excess:</strong> ${latestData.excess}</p>
+            </div>
+            <div class="restaurant-details">
+              <p class="restaurant-discount">${latestData.discount}</p>
+              <p class="restaurant-expiry">${latestData.expiry}</p>
+            </div>
+          </div>
+        `;
+      }
+    </script>
+  </body>
+</html>

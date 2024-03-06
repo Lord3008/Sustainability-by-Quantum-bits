@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Feedback</title>
+  <link rel="stylesheet" href="feedback2.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Your Feedback</h1>
+
+  <div id="feedbackForm">
+    <label for="restaurantName">Name of the Feedbacker:</label>
+    <input type="text" id="restaurantName" required>
+
+    <label for="feedbackText">Type your feedback Feedback:</label>
+    <textarea id="feedbackText" rows="4" required></textarea>
+
+    <button onclick="submitFeedback()">Submit Feedback</button>
+  </div>
+</div>
+
+<script src="feedback.js"></script>
+</body>
+</html>

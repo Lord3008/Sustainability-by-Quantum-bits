@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Energy Management</title>
+    <link rel="stylesheet" href="controlcenter.css">
+</head>
+<body>
+
+<h2>AQI Value and Category</h2>
+
+<form action="/submit_form" method="post">
+    <label for="restaurantName">Company Name:</label>
+    <input type="text" id="restaurantName" name="restaurantName" required><br>
+
+    <label for="restaurantID">Smart Control Center Name: </label>
+    <input type="text" id="restaurantID" name="restaurantID" required><br>
+    
+    <input type="submit" value="Submit">
+    <h3>Output: </h3>
+    <label for="phoneNumber">AQI value is: .....</label>
+    <label for="phoneNumber">AQI Category is :.....</label>
+    
+</form>
+
+<script src="app.js"></script>
+</body>
+</html>

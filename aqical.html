@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Information Form</title>
+    <link rel="stylesheet" href="aqical.css">
+</head>
+<body>
+
+<h2>AQI Value and Category</h2>
+
+<form action="/submit_form" method="post">
+    <h3>Inputs:</h3>
+    <label for="restaurantName">Country:</label>
+    <input type="text" id="restaurantName" name="restaurantName" required><br>
+
+    <label for="restaurantID">City:</label>
+    <input type="text" id="restaurantID" name="restaurantID" required><br>
+
+    <label for="password">CO AQI Value:</label>
+    <input type="password" id="password" name="password" required><br>
+
+    <label for="location">PM2 AQI Value:</label>
+    <input type="text" id="location" name="location" required><br>
+
+    <label for="phoneNumber">NO2 AQI Value:</label>
+    <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" placeholder="Enter 10-digit phone number" required><br>
+    <label for="phoneNumber">Ozone AQI Value:</label>
+    <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" placeholder="Enter 10-digit phone number" required><br>
+    
+    <input type="submit" value="Submit">
+    <h3>Output: </h3>
+    <label for="phoneNumber">AQI value is: .....</label>
+    <label for="phoneNumber">AQI Category is :.....</label>
+    
+</form>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Demand Prediction</title>
+</head>
+<body>
+    <h1>ML Model Prediction</h1>
+    <form method="post" action="/predict">
+        <label for="restaurant_id">Restaurant ID:</label>
+        <input type="text" name="restaurant_id" required><br>
+
+        <label for="center_id">Center ID:</label>
+        <input type="text" name="center_id" required><br>
+
+        <label for="week">Week:</label>
+        <input type="text" name="week" required><br>
+
+        <label for="base_price">Base Price:</label>
+        <input type="text" name="base_price" required><br>
+
+        <label for="checkout_price">Checkout Price:</label>
+        <input type="text" name="checkout_price" required><br>
+
+        <label for="emailer_for_promotion">Emailer for Promotion (0 or 1):</label>
+        <input type="text" name="emailer_for_promotion" required><br>
+
+        <label for="homepage_featured">Homepage Featured (0 or 1):</label>
+        <input type="text" name="homepage_featured" required><br>
+
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Feedback</title>
+  <link rel="stylesheet" href="renewable.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Renewable Energy Supplies</h1>
+
+  <div id="feedbackForm">
+    <label for="restaurantName">Energy Supplier Name</label>
+    <input type="text" id="restaurantName" required>
+
+    <label for="feedbackText">Renewable Energy You can Provide</label>
+    <textarea id="feedbackText" rows="4" required></textarea>
+    <label for="feedbackText">Type the amount(TWH):</label>
+    <textarea id="feedbackText" rows="4" required></textarea>
+
+    <button onclick="submitFeedback()">Submit Feedback</button>
+  </div>
+</div>
+
+<script src="feedback.js"></script>
+</body>
+</html>

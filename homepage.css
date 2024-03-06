@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('food.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #000000; 
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+ 
+}
+
+h1 {
+    color: #2e2424;
+    font-size: 50px;
+  
+}
+
+.random-content {
+    background-color: rgba(244, 244, 244, 0.8); 
+    padding: 20px;
+    margin: 20px 0;
+    font-size: 18px; 
+}
+
+
+.join-us {
+    margin-top: 30px;
+}
+
+.join-us p {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.join-us a {
+    display: inline-block;
+    background-color: #3633ff; 
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.join-us a:hover {
+    background-color: #2249e6; 
+}

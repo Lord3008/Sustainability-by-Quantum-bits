@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Energy Management</title>
+    <link rel="stylesheet" href="controlcenter.css">
+</head>
+<body>
+
+<h2>Smart Energy Management</h2>
+
+<form action="/submit_form" method="post">
+    <label for="restaurantName">Company Name:</label>
+    <input type="text" id="restaurantName" name="restaurantName" required><br>
+
+    <label for="restaurantID">Smart Control Center Name: </label>
+    <input type="text" id="restaurantID" name="restaurantID" required><br>
+    
+    <div class="option" id="feedbackOption">
+        <a href="#">Login</a>
+    </div>
+</form>
+
+<script src="app.js"></script>
+</body>
+</html>

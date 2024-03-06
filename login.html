@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Prediction</title>
+</head>
+<body>
+    <h1>Predict Number of Orders</h1>
+    <form id="prediction-form">
+        <label for="id">ID:</label>
+        <input type="number" id="id" name="id" required><br>
+        <label for="week">Week:</label>
+        <input type="number" id="week" name="week" required><br>
+        <label for="center_id">Center ID:</label>
+        <input type="number" id="center_id" name="center_id" required><br>
+        <label for="meal_id">Meal ID:</label>
+        <input type="number" id="meal_id" name="meal_id" required><br>
+        <label for="checkout_price">Checkout Price:</label>
+        <input type="number" id="checkout_price" name="checkout_price" required><br>
+        <label for="base_price">Base Price:</label>
+        <input type="number" id="base_price" name="base_price" required><br>
+        <label for="emailer_for_promotion">Emailer for Promotion (0/1):</label>
+        <input type="number" id="emailer_for_promotion" name="emailer_for_promotion" required><br>
+        <label for="homepage_featured">Homepage Featured (0/1):</label>
+        <input type="number" id="homepage_featured" name="homepage_featured" required><br>
+        <button type="submit">Predict</button>
+    </form>
+    <p id="prediction"></p>
+    <script>
+        const form = document.getElementById('prediction-form');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const id = document.getElementById('id').value;
+            const week = document.getElementById('week').value;
+            const center_id = document.getElementById('center_id').value;
+            const meal_id = document.getElementById('meal_id').value;
+            const checkout_price = document.getElementById('checkout_price').value;
+            const base_price = document.getElementById('base_price').value;
+            const emailer_for_promotion = document.getElementById('emailer_for_promotion').value;
+            const homepage_featured = document.getElementById('homepage_featured').value;
+
+            // Make a fetch request to the API endpoint
+            fetch('/predict', {
+                method: 'POST',
+                body: JSON.stringify({
+                    id: id,
+                    week: week,
+                    center_id: center_id,
+                    meal_id: meal_id,
+                    checkout_price: checkout_price,
+                    base_price: base_price,
+                    emailer_for_promotion: emailer_for_promotion,
+                    homepage_featured: homepage_featured
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('prediction').textContent = 'Predicted Number of Orders: ' + data.prediction;
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
