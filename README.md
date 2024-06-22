@@ -10,4 +10,4 @@ An umbrella initiative that ensures the following facilities:
 
 # Impact 🌟
 
-The project **Sustainability Bites** aims to significantly reduce food waste, improve air quality, and enhance energy planning, contributing to a more sustainable and resilient future for communities worldwide.
+The project **Sustainability Bites** aims to significantly reduce food waste, improve air quality, and enhance energy planning, contributing to a more sustainable and resilient future for communities worldwide. This if used properly can ensure a great management of country as a whole.
